@@ -39,7 +39,7 @@ public class Sisu {
 		System.out.println("INSCRIÇÃO: " + candidato.getNumeroInscricao());
 	}
 	
-	public void verInscricao() {
+	public void verInscricao(int ano) {
 		int opcao;
 		System.out.println("VER INSCRIÇÃO");
 		System.out.println("Digite 1 para fornecer o CPF");
@@ -49,10 +49,25 @@ public class Sisu {
 		switch (opcao) {
 		case 1:
 			System.out.println("Informe o CPF: ");
-			
-		
+			mostrarCandidato(obterEdicaoEnem(ano).getCandidato(Input.get()));
+			break;
+		case 2:
+			System.out.println("Informe o Número da Inscrição: ");
+			mostrarCandidato(obterEdicaoEnem(ano).getCandidato(Integer.parseInt(Input.get())));
+			break;
 		}
 		
+	}
+	
+	private void mostrarCandidato(Candidato candidato) {
+		System.out.println("===== CANDIDATO =====");
+		System.out.println("Inscrição: " + candidato.getNumeroInscricao());
+		System.out.println("Nome: " + candidato.getNome());
+		System.out.println("CPF: " + candidato.getCpf());
+		System.out.println("Email: " + candidato.getEmail());
+		System.out.println("Curso: " + candidato.getCurso().getSigla());
+		System.out.println("Nota do Enem" + candidato.getNotaEnem());
+		System.out.println("=====================");
 	}
 	
 	public void calcularNotaDeCorte(Curso curso, int ano) {
