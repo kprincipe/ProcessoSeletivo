@@ -43,7 +43,9 @@ public class Sisu {
 	}
 	
 	private EdicaoEnem obterEdicaoEnem(int ano) {
-		//TODO encontrar o objeto de edicao do ENEM por ano.
+		for (EdicaoEnem edicaoEnem : edicoesEnem) {
+			if (edicaoEnem.getAno() == ano) return edicaoEnem;
+		}
 		return null;
 	}
 
