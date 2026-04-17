@@ -48,6 +48,15 @@ public class Sisu {
 		}
 		return null;
 	}
+	
+	public float obterNotaDeCorte (Curso curso, int ano) {
+		for (EdicaoEnem edicaoEnem : edicoesEnem) {
+			if (edicaoEnem.getAno() == ano) {
+				return edicaoEnem.obterNotaDeCortre(curso);
+			}	
+		}
+		
+		return 0.0f;
+	}
 
 }
-	
