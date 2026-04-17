@@ -22,7 +22,15 @@ public class EdicaoEnem {
 	}
 	
 	public void calcularNotaDeCorte(Curso curso) {
-		//TODO Calcular a nota de corte do curso nesta edição
+		// Determinando uma nota 7 como sendo nota de corte
+		// Falta fazer o cálculo correto
+		for(NotaDeCorte notaDeCorte : notasDeCorte) {
+			if(notaDeCorte.getCurso().equals(curso)) {
+				notaDeCorte.setNota(1, 7.0f);
+				
+			}
+			
+		}
 	}
 	
 }
