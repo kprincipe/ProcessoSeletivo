@@ -50,13 +50,11 @@ public class Sisu {
 	}
 	
 	public float obterNotaDeCorte (Curso curso, int ano) {
-		for (EdicaoEnem edicaoEnem : edicoesEnem) {
-			if (edicaoEnem.getAno() == ano) {
-				return edicaoEnem.obterNotaDeCortre(curso);
-			}	
-		}
+		EdicaoEnem edicaoEnem = obterEdicaoEnem(ano);
+		if (edicaoEnem == null)
+			return 0.0f;
 		
-		return 0.0f;
+		return edicaoEnem.obterNotaDeCortre(curso);
 	}
 
 }
