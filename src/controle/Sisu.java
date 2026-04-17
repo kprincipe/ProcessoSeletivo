@@ -18,6 +18,10 @@ public class Sisu {
 		edicoesEnem.add(edicaoEnem);
 	}
 	
+	public void verNotaDeCorte(int numeroInscricao) {
+		
+	}
+	
 	public void fazerInscricao(Curso curso, int ano) {
 		Candidato candidato = new Candidato();
 		System.out.print("Informe o nome do candidato: ");
