@@ -24,13 +24,23 @@ public class EdicaoEnem {
 	public void calcularNotaDeCorte(Curso curso) {
 		// Determinando uma nota 7 como sendo nota de corte
 		// Falta fazer o cálculo correto
-		for(NotaDeCorte notaDeCorte : notasDeCorte) {
-			if(notaDeCorte.getCurso().equals(curso)) {
-				notaDeCorte.setNota(1, 7.0f);
-				
+		for(Candidato candidato : candidatos) {
+			if(candidato.getCurso().equals(curso)) {
+				NotaDeCorte notaDeCorte = new NotaDeCorte();
+				notaDeCorte.setNota(1, candidato.getNotaEnem());
+				notasDeCorte.add(notaDeCorte);
+				break;
 			}
-			
 		}
 	}
 	
+	public float obterNotaDeCortre(Curso curso) {
+		for(NotaDeCorte notaDeCorte : notasDeCorte) {
+			if(notaDeCorte.getCurso().equals(curso)) {
+				return notaDeCorte.getNota(1);
+			}
+		}
+		
+		return 0.0f;
+	}
 }
