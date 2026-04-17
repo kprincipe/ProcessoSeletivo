@@ -15,6 +15,8 @@ public class EdicaoEnem {
 	public int getAno() {
 		return this.ano;
 	}
+	
+	private EdicaoEnem() {}
 
 	public void inscreverCandidato(Candidato candidato) {
 		candidato.setNumeroInscricao(++ultimaInscricao);
@@ -42,5 +44,24 @@ public class EdicaoEnem {
 		}
 		
 		return 0.0f;
+	}
+	
+	
+	// Sobrecarga de métodos
+	// Dois métodos com mesmo nome, mas com parâmetros diferentes
+	public Candidato getCandidato(int numeroInscricao) {
+		for(Candidato candidato : candidatos) {
+			if (candidato.getNumeroInscricao() == numeroInscricao)
+				return candidato;
+		}
+		return null;
+	}
+	
+	public Candidato getCandidato(String cpf) {
+		for (Candidato candidato : candidatos) {
+			if (candidato.getCpf().equals(cpf));
+				return candidato;
+		}
+		return null;
 	}
 }
