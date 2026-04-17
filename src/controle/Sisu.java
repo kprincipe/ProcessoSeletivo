@@ -38,6 +38,23 @@ public class Sisu {
 		
 		System.out.println("INSCRIÇÃO: " + candidato.getNumeroInscricao());
 	}
+	
+	public void verInscricao() {
+		int opcao;
+		System.out.println("VER INSCRIÇÃO");
+		System.out.println("Digite 1 para fornecer o CPF");
+		System.out.println("Digite 2 para fornecer o Número da Inscrição");
+		opcao = Integer.parseInt(Input.get());
+		
+		switch (opcao) {
+		case 1:
+			System.out.println("Informe o CPF: ");
+			
+		
+		}
+		
+	}
+	
 	public void calcularNotaDeCorte(Curso curso, int ano) {
 		obterEdicaoEnem(ano).calcularNotaDeCorte(curso);
 	}
