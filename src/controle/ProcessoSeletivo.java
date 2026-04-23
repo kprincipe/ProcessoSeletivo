@@ -11,6 +11,7 @@ public class ProcessoSeletivo {
 	private static CampusController campusController = new CampusController();
 	private static CursoController cursoController = new CursoController();
 	private static Sisu sisu = new Sisu();
+	private static int anoSisu = 0;
 
 	public static void main(String[] args) {
 		int opcao;
@@ -91,6 +92,47 @@ public class ProcessoSeletivo {
 			}
 			
 		} while(opcao < 3);
+	}
+	
+	
+	
+	private static void operarSisu() {
+		int opcao;
+		do {
+			System.out.println("SISU");
+			System.out.println("SELECIONE A OPÇÃO PELO NUMERO");
+			System.out.println("1. Definir nova edição");
+			System.out.println("2. Inscrever candidato.");
+			System.out.println("3. Sair");
+			opcao = Integer.parseInt(Input.get());
+
+			switch(opcao) {
+			case 1:
+				cadastrarCampus();
+				break;
+			case 2:
+				cadastrarCurso();
+				break;
+			}
+			
+		} while(opcao < 3);
+		
+	}
+	
+	private static void solicitarAnoEnem() {
+		System.out.println("Informe o ano da nova Edição:");
+		anoSisu = Integer.parseInt(Input.get());
+	}
+	
+	private static void fazerInscricao () {
+		campusController.listar();
+		System.out.println("Escolha o campus pelo número: ");
+		int opcaoCampus = Integer.parseInt(Input.get());
+		
+		Campus campus = campusController.getCampus(opcaoCampus);
+		
+		cursoController.listar(campus);
+		sisu.fazerInscricao(null, anoSisu);
 	}
 
 /*
