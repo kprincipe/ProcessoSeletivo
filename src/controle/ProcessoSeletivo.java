@@ -135,7 +135,7 @@ public class ProcessoSeletivo {
 		cursoController.listar(campus);
 		System.out.println("Escolha o curso pelo número: ");
 		int opcaoCurso = Integer.parseInt(Input.get());
-		sisu.fazerInscricao(cursoController.getCurso(opcaoCurso),anoSisu);
+		sisu.fazerInscricao(cursoController.getCurso(opcaoCurso), anoSisu);
 
 	}
 
