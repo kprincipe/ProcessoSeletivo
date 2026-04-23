@@ -3,6 +3,7 @@ package controle;
 import java.util.Scanner;
 
 import entidade.Campus;
+import entidade.Curso;
 import util.Input;
 
 @SuppressWarnings("resource")
@@ -132,7 +133,10 @@ public class ProcessoSeletivo {
 		Campus campus = campusController.getCampus(opcaoCampus);
 		
 		cursoController.listar(campus);
-		sisu.fazerInscricao(null, anoSisu);
+		System.out.println("Escolha o curso pelo número: ");
+		int opcaoCurso = Integer.parseInt(Input.get());
+		sisu.fazerInscricao(cursoController.getCurso(opcaoCurso),anoSisu);
+
 	}
 
 /*

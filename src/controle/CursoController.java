@@ -55,4 +55,8 @@ public class CursoController {
 	private void cadastrarDisciplinas(Grade grade) {
 		
 	}
+	
+	public Curso getCurso(int i) {
+		return cursos.get(i);
+	}
 }
