@@ -103,10 +103,11 @@ public class ProcessoSeletivo {
 			System.out.println("SISU");
 			System.out.println("SELECIONE A OPÇÃO PELO NUMERO");
 			System.out.println("1. Definir nova edição");
-			if (! (ano != 0 )) { // erro!!
-				System.out.println("2. Inscrever candidato.");				
+			if (anoSisu  != 0 ) { 
+				System.out.println("2. Inscrever candidato.");
+				System.out.println("3. Ver inscrição");
 			}
-			System.out.println("3. Sair");
+			System.out.println("4. Sair");
 			opcao = Integer.parseInt(Input.get());
 
 			switch(opcao) {
@@ -115,11 +116,14 @@ public class ProcessoSeletivo {
 				sisu.definirNovaEdicaoEnem(anoSisu);
 				break;
 			case 2:
-				if (ano != 0) fazerInscricao(); // erro!!
+				if (anoSisu != 0) fazerInscricao(); 
+				break;
+			case 3:
+				if (anoSisu != 0) sisu.verInscricao(anoSisu);
 				break;
 			}
 			
-		} while(opcao < 3);
+		} while(opcao < 4);
 		
 	}
 	
