@@ -103,16 +103,19 @@ public class ProcessoSeletivo {
 			System.out.println("SISU");
 			System.out.println("SELECIONE A OPÇÃO PELO NUMERO");
 			System.out.println("1. Definir nova edição");
-			System.out.println("2. Inscrever candidato.");
+			if (! (ano != 0 )) { // erro!!
+				System.out.println("2. Inscrever candidato.");				
+			}
 			System.out.println("3. Sair");
 			opcao = Integer.parseInt(Input.get());
 
 			switch(opcao) {
 			case 1:
-				cadastrarCampus();
+				solicitarAnoEnem();
+				sisu.definirNovaEdicaoEnem(anoSisu);
 				break;
 			case 2:
-				cadastrarCurso();
+				if (ano != 0) fazerInscricao(); // erro!!
 				break;
 			}
 			
