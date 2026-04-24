@@ -140,10 +140,8 @@ public class ProcessoSeletivo {
 		campusController.listar();
 		System.out.println("Escolha o campus pelo número: ");
 		int opcaoCampus = Integer.parseInt(Input.get());
-		
-		Campus campus = campusController.getCampus(opcaoCampus);
-		
-		cursoController.listar(campus);
+			
+		cursoController.listar(campusController.getCampus(opcaoCampus));
 		System.out.println("Escolha o curso pelo número: ");
 		int opcaoCurso = Integer.parseInt(Input.get());
 		sisu.fazerInscricao(cursoController.getCurso(opcaoCurso), anoSisu);
