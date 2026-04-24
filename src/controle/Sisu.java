@@ -12,14 +12,16 @@ public class Sisu {
 	
 	private ArrayList<EdicaoEnem> edicoesEnem = new ArrayList<>();
 	
-
 	public void definirNovaEdicaoEnem(int ano) {
 		EdicaoEnem edicaoEnem = new EdicaoEnem(ano);
 		edicoesEnem.add(edicaoEnem);
 	}
-	
-	public void verNotaDeCorte(int numeroInscricao) {
-		
+
+	private EdicaoEnem obterEdicaoEnem(int ano) {
+		for (EdicaoEnem edicaoEnem : edicoesEnem) {
+			if (edicaoEnem.getAno() == ano) return edicaoEnem;
+		}
+		return null;
 	}
 	
 	public void fazerInscricao(Curso curso, int ano) {
@@ -70,17 +72,6 @@ public class Sisu {
 		System.out.println("=====================");
 	}
 	
-	public void calcularNotaDeCorte(Curso curso, int ano) {
-		obterEdicaoEnem(ano).calcularNotaDeCorte(curso);
-	}
-	
-	private EdicaoEnem obterEdicaoEnem(int ano) {
-		for (EdicaoEnem edicaoEnem : edicoesEnem) {
-			if (edicaoEnem.getAno() == ano) return edicaoEnem;
-		}
-		return null;
-	}
-	
 	public float obterNotaDeCorte (Curso curso, int ano) {
 		EdicaoEnem edicaoEnem = obterEdicaoEnem(ano);
 		if (edicaoEnem == null)
@@ -88,5 +79,12 @@ public class Sisu {
 		
 		return edicaoEnem.obterNotaDeCortre(curso);
 	}
+	
+	public void calcularNotaDeCorte(Curso curso, int ano) {
+		obterEdicaoEnem(ano).calcularNotaDeCorte(curso);
+	}
 
+	public void verNotaDeCorte(int numeroInscricao) {
+		
+	}
 }
