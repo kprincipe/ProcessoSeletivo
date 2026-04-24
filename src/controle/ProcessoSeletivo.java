@@ -21,7 +21,8 @@ public class ProcessoSeletivo {
 			System.out.println("SELECIONE A OPÇÃO PELO NUMERO");
 			System.out.println("1. Cadastro de Campus");
 			System.out.println("2. Cadastro de Curso");
-			System.out.println("3. Sair");
+			System.out.println("3. SISU");
+			System.out.println("4. Sair");
 
 			System.out.print("Selecione a opção: ");
 			opcao = Integer.parseInt(Input.get());
@@ -33,8 +34,11 @@ public class ProcessoSeletivo {
 			case 2:
 				cadastrarCurso();
 				break;
+			case 3:
+				operarSisu();
+				break;
 			}
-		} while (opcao < 3);
+		} while (opcao < 4);
 	}
 	
 	private static void cadastrarCampus() {
